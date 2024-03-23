@@ -2,6 +2,8 @@ import React from 'react';
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
+import backgroundImage from './assets/Lavender-Farms-in-Ontario-for-a-Day-Trip.webp'
+
 
 function Login() {
     const [email,setEmail] = useState()
@@ -21,8 +23,9 @@ function Login() {
     }
 
     return(
-        <div className="d-flex justify-content-center align-items-center bg-secondary vh-100">
-        <div className="bg-white p-3 rounded w-25">
+        <div className="d-flex justify-content-center align-items-center bg-secondary vh-100"
+         style={{ backgroundImage: `url(${backgroundImage})` }}>
+       <div style={{ backgroundColor: 'purple', color: 'white' }} className="p-3 rounded w-25">
             <h2>Login</h2>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">

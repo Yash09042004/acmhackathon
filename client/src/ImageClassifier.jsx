@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as tmImage from '@teachablemachine/image';
 
-const URL = "https://teachablemachine.withgoogle.com/models/EWKVBWle6/";
+const MODEL_URL = "https://teachablemachine.withgoogle.com/models/EWKVBWle6/";
 
 function ImageClassifier() {
     const [model, setModel] = useState(null);
@@ -11,8 +11,8 @@ function ImageClassifier() {
     const imageRef = useRef();
 
     const init = async () => {
-        const modelURL = URL + "model.json";
-        const metadataURL = URL + "metadata.json";
+        const modelURL = MODEL_URL + "model.json";
+        const metadataURL = MODEL_URL + "metadata.json";
 
         const model = await tmImage.load(modelURL, metadataURL);
         setModel(model);
@@ -39,7 +39,7 @@ function ImageClassifier() {
         <div>
             <input type="file" accept="image/*" onChange={handleImageUpload} />
             <img ref={imageRef} src={imageURL} alt="" style={{ display: 'none' }} />
-            <button onClick={predict}>Detect</button>
+            <button onClick={predict} disabled={!model}>Detect</button>
             <div>
             {predictions.map((prediction, i) => {
                 const message = `${prediction.className}: ${prediction.probability.toFixed(2)}`;
