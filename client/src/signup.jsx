@@ -84,7 +84,7 @@ function Signup() {
               {error}
             </div>
           )}
-          <button type="submit" className="btn btn-success w-100 rounded-0 mb-3" style={{ borderRadius: '10px', boxShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>Register</button>
+          <button type="submit" className="btn w-100 rounded-0 mb-3" style={{ borderRadius: '10px', boxShadow: '2px 2px 4px rgba(0,0,0,0.5)', backgroundColor: '#333', color: '#fff' }}>Register</button>
         </form>
                 <p className="mb-2 text-center">Already have an account?</p>
                 <Link to="/login" className="btn btn-default w-100 bg-light rounded-0 text-decoration-none">Login</Link>

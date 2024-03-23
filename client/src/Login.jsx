@@ -66,10 +66,10 @@ function Login() {
               {error}
             </div>
           )}
-          <button type="submit" className="btn btn-success w-100 rounded-0">Login</button>
+          <button type="submit" className="btn w-100 rounded-0" style={{ backgroundColor: '#333', color: '#fff' }}>Login</button>
         </form>
         <p>Don't have an account?</p>
-        <Link to="/signup" className="btn btn-default w-100 bg-light rounded-0 text-decoration-none">Signup</Link>
+        <Link to="/register" className="btn btn-default w-100 bg-light rounded-0 text-decoration-none">Signup</Link>
       </div>
     </div>
   );

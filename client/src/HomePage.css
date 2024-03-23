@@ -1,0 +1,103 @@
+.main_container{
+    display: flex;
+    justify-content: center;
+    /* padding: 20px; */
+    color: #ffffff;
+}
+.container{
+    opacity: 0.8;
+}
+
+.container2{
+    opacity: 0.8;
+}
+
+.fields {
+    display: flex; /* Make this a flex container */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    width: 100%; /* Take up the full width of the parent */
+}
+
+.container, .container2{
+    background: #430A5D; /* light lavender background for containers */
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 30px;
+    width: 550px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+}
+.homepage {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('./assets/Lavender-Farms-in-Ontario-for-a-Day-Trip.webp');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.first, .second, .third, .fourth, .fifth, .six {
+    display: flex; /* Make this a flex container */
+    align-items: center; /* Center items vertically */
+}
+
+.site-title {
+    text-align: center;
+    font-size: 2.5em; /* Increase the size a little */
+    font-family: 'Georgia', serif; /* Change the font to Georgia */
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px; 
+    margin-left: 10px;
+   
+}
+
+.container h2, .container2 h2{
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.yo, .zoo, .Too {
+    display: flex;
+    flex-direction: row; /* align items horizontally */
+    justify-content: flex-start; /* align items to the start of the container */
+    align-items: center; /* vertically center the items */
+    margin-bottom: 20px;
+    width: 350px;
+    height: 65px;
+    color: #333;
+    background: #eaeaea;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    margin: 20px auto;
+    padding-left: 20px; /* add some padding to the left */
+}
+
+body{
+    
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('./assets/Lavender-Farms-in-Ontario-for-a-Day-Trip.webp');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.gray{
+    background: #eaeaea;
+    color: #676767;
+}

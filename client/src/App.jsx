@@ -3,11 +3,13 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Signup from './signup';
 import Login from './Login';
-import Home from './home';
+import HomePage from './HomePage';
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from 'firebase/auth'; 
 import { getStorage, ref, uploadBytes } from "firebase/storage";
+import ImageClassifier from './ImageClassifier'
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyC-f4_eyJA1ABl2SXbrJslBtfFNNkjII6A",
@@ -52,7 +54,8 @@ function App() {
         <Routes>
           <Route path='/register' element={<Signup user={user} handleLogout={handleLogout} />} />
           <Route path='/login' element={<Login user={user} handleLogout={handleLogout} />} />
-          <Route path='/home' element={<Home user={user} handleFileUpload={handleFileUpload} />} />
+          <Route path='/home' element={<HomePage user={user} handleFileUpload={handleFileUpload} />} />
+          <Route path='/classify' element= {<ImageClassifier />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
