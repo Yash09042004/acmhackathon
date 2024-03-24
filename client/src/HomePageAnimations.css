@@ -1,0 +1,51 @@
+/* HomePageAnimations.css */
+
+.site-title {
+    font-family: 'Arial', sans-serif; /* Change this to any font you like */
+    font-size: 2em; /* Adjust size as needed */
+    animation: fadeIn 2s, bounce 1s infinite;
+  }
+  
+  @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-30px);}
+    60% {transform: translateY(-15px);}
+  }
+.icon {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .icon:hover {
+    transform: scale(1.1) rotate(20deg);
+  }
+  
+  .fields p {
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .fields:hover p {
+    color: #007BFF; /* Change this to any color you like */
+  }
+  
+  .site-title {
+    animation: fadeIn 2s;
+  }
+  
+  .main_container {
+    animation: slideIn 1s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+  
+  @keyframes slideIn {
+    0% {transform: translateX(-100%);}
+    100% {transform: translateX(0);}
+  }

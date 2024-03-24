@@ -2,25 +2,30 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as tmImage from '@teachablemachine/image';
 import './styles.css';
-const MODEL_URL = "https://teachablemachine.withgoogle.com/models/BbKE2sRnJ/";
+
+const MODEL_URL1 = "https://teachablemachine.withgoogle.com/models/9xZkj9EEY/";
+const MODEL_URL2 = "https://teachablemachine.withgoogle.com/models/8UZn3Yn59/";
 
 function ImageClassifier() {
-    const [model, setModel] = useState(null);
-    const [predictions, setPredictions] = useState([]);
+    const [model1, setModel1] = useState(null);
+    const [model2, setModel2] = useState(null);
+    const [predictions1, setPredictions1] = useState([]);
+    const [predictions2, setPredictions2] = useState([]);
     const [imageURL, setImageURL] = useState(null);
     const imageRef = useRef();
 
     const init = async () => {
-        const modelURL = MODEL_URL + "model.json";
-        const metadataURL = MODEL_URL + "metadata.json";
-
-        const model = await tmImage.load(modelURL, metadataURL);
-        setModel(model);
+        const model1 = await tmImage.load(MODEL_URL1 + "model.json", MODEL_URL1 + "metadata.json");
+        const model2 = await tmImage.load(MODEL_URL2 + "model.json", MODEL_URL2 + "metadata.json");
+        setModel1(model1);
+        setModel2(model2);
     };
 
     const predict = async () => {
-        const prediction = await model.predict(imageRef.current);
-        setPredictions(prediction);
+        const prediction1 = await model1.predict(imageRef.current);
+        const prediction2 = await model2.predict(imageRef.current);
+        setPredictions1(prediction1);
+        setPredictions2(prediction2);
     };
 
     const handleImageUpload = (event) => {
@@ -35,13 +40,8 @@ function ImageClassifier() {
         init();
     }, []);
 
-  
-
-
-    
     return (
         <div className="background-animation">
-        
         <div style={{
             display: 'flex',
             flexDirection: 'column',
@@ -70,7 +70,7 @@ function ImageClassifier() {
             <img ref={imageRef} src={imageURL} alt="" style={{ display: 'none' }} />
             <button 
                 onClick={predict} 
-                disabled={!model} 
+                disabled={!model1 || !model2} 
                 style={{
                     padding: '10px',
                     backgroundColor: '#6A0575', // Button color
@@ -88,17 +88,45 @@ function ImageClassifier() {
             </button>
             <div style={{ 
                 marginTop: '20px', 
-                color: 'yellow', 
-                opacity: predictions.length > 0 ? 1 : 0, 
-                transition: 'opacity 0.5s ease-in-out' // Fade-in animation
-            }}> {/* Result text color */}
-            {predictions.map((prediction, i) => {
-                const message = `${prediction.className}: ${prediction.probability.toFixed(2)}`;
-                return <div key={i}>{message}</div>
-            })}
+                display: 'flex',
+                justifyContent: 'space-around',
+                width: '100%',
+                maxWidth: '800px'
+            }}>
+                {predictions1.map((prediction, i) => {
+                    const message = `${prediction.className}: ${(prediction.probability*100).toFixed(2)}%`;
+                    return (
+                        <div key={i} style={{
+                            backgroundColor: '#6A0575',
+                            padding: '20px',
+                            borderRadius: '10px',
+                            width: '100%',
+                            margin: '10px',
+                            color: 'yellow'
+                        }}>
+                            {message}
+                        </div>
+                    );
+                })}
+                {predictions2.map((prediction, i) => {
+                    const message = `${prediction.className}: ${(prediction.probability*100).toFixed(2)}%`;
+                    return (
+                        <div key={i} style={{
+                            backgroundColor: '#6A0575',
+                            padding: '20px',
+                            borderRadius: '10px',
+                            width: '100%',
+                            margin: '10px',
+                            color: 'yellow'
+                        }}>
+                            {message}
+                        </div>
+                    );
+                })}
             </div>
         </div>
-        </div>
+    </div>
+      
     );
 }
 

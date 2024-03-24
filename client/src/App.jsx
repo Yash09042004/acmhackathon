@@ -9,6 +9,7 @@ import { getAnalytics } from "firebase/analytics";
 import { getAuth } from 'firebase/auth'; 
 import { getStorage, ref, uploadBytes } from "firebase/storage";
 import ImageClassifier from './ImageClassifier'
+import Rules from "./Rules/Rules"
 
 
 const firebaseConfig = {
@@ -56,6 +57,7 @@ function App() {
           <Route path='/login' element={<Login user={user} handleLogout={handleLogout} />} />
           <Route path='/home' element={<HomePage user={user} handleFileUpload={handleFileUpload} />} />
           <Route path='/classify' element= {<ImageClassifier />}></Route>
+          <Route path='/rules' element= {<Rules user={user} handleFileUpload={handleFileUpload}/>}></Route>
         </Routes>
       </BrowserRouter>
     </div>

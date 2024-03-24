@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     /* padding: 20px; */
+    margin-top: 70px;
     color: #ffffff;
 }
 .container{
@@ -27,6 +28,7 @@
     padding: 30px;
     width: 550px;
     border-radius: 20px;
+    margin-top: 30px;
     box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
 }
 .homepage {
@@ -40,18 +42,22 @@
     background-size: cover;
 }
 
-.first, .second, .third, .fourth, .fifth, .six {
-    display: flex; /* Make this a flex container */
-    align-items: center; /* Center items vertically */
-}
+.first, .second, .third, .four, .fifth, .sixth {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
 
 .site-title {
-    text-align: center;
-    font-size: 2.5em; /* Increase the size a little */
-    font-family: 'Georgia', serif; /* Change the font to Georgia */
-    color: #fff;
-    margin-bottom: 20px;
-}
+    font-family: 'Georgia', serif; /* Change this to any font you like */
+    font-size: 3em; /* Adjust size as needed */
+    font-weight: bold; /* Makes the text bolder */
+    color: #ffffff; /* Sets the color to white */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds a shadow to the text */
+    animation: fadeIn 2s, bounce 1s infinite;
+    text-align: center; /* Centers the text */
+    margin-bottom: 20px; /* Adds a margin below the text */
+  } 
 
 .icon {
     width: 50px;
@@ -60,15 +66,48 @@
     margin-left: 10px;
    
 }
-
+input:active {
+    border-color: #007BFF; /* Change this to any color you like */
+  }
 .container h2, .container2 h2{
     text-align: center;
     font-family: 'Arial', sans-serif;
     color: #333;
     margin-bottom: 20px;
 }
+.main_container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 70px; /* adjust as needed */
+}
 
-.yo, .zoo, .Too {
+.container, .container2 {
+  width: 45%; /* adjust as needed */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.zoo{
+    display: flex;
+    flex-direction: row; /* align items horizontally */
+    justify-content: flex-start; /* align items to the start of the container */
+    align-items: center; /* vertically center the items */
+    margin-bottom: 30px;
+    width: 350px;
+    height: 65px;
+    color: #333;
+    background: #eaeaea;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    margin: 20px auto;
+    padding-left: 20px;
+}
+.yo,.Too {
     display: flex;
     flex-direction: row; /* align items horizontally */
     justify-content: flex-start; /* align items to the start of the container */
